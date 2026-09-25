@@ -5,5 +5,7 @@
 build/
 Build/
 local/
+xcuserdata/
+*.xcworkspace
 __pycache__/
 *.pyc

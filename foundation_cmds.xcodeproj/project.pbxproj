@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FEEDFACE0000000000000021 /* pl.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000051 /* pl.m */; };
+		FEEDFACE0000000000000022 /* plutil.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000052 /* plutil.m */; };
+		FEEDFACE0000000000000023 /* defaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000053 /* defaults.m */; };
+		FEEDFACE0000000000000031 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000061 /* Foundation.framework */; };
+		FEEDFACE0000000000000032 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000062 /* CoreFoundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FEEDFACE0000000000000041 /* pl */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = pl; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEDFACE0000000000000042 /* plutil */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = plutil; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEDFACE0000000000000043 /* defaults */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = defaults; sourceTree = BUILT_PRODUCTS_DIR; };
+		FEEDFACE0000000000000051 /* pl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pl.m; sourceTree = "<group>"; };
+		FEEDFACE0000000000000052 /* plutil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = plutil.m; sourceTree = "<group>"; };
+		FEEDFACE0000000000000053 /* defaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = defaults.m; sourceTree = "<group>"; };
+		FEEDFACE0000000000000061 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FEEDFACE0000000000000062 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FEEDFACE0000000000000081 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEDFACE0000000000000031 /* Foundation.framework in Frameworks */,
+				FEEDFACE0000000000000032 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEEDFACE0000000000000082 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEDFACE0000000000000031 /* Foundation.framework in Frameworks */,
+				FEEDFACE0000000000000032 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEEDFACE0000000000000083 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEDFACE0000000000000031 /* Foundation.framework in Frameworks */,
+				FEEDFACE0000000000000032 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FEEDFACE0000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000004 /* src */,
+				FEEDFACE0000000000000008 /* man */,
+				FEEDFACE0000000000000009 /* Frameworks */,
+				FEEDFACE0000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000041 /* pl */,
+				FEEDFACE0000000000000042 /* plutil */,
+				FEEDFACE0000000000000043 /* defaults */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000004 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000005 /* pl */,
+				FEEDFACE0000000000000006 /* plutil */,
+				FEEDFACE0000000000000007 /* defaults */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000005 /* pl */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000051 /* pl.m */,
+			);
+			path = pl;
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000006 /* plutil */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000052 /* plutil.m */,
+			);
+			path = plutil;
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000007 /* defaults */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000053 /* defaults.m */,
+			);
+			path = defaults;
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000008 /* man */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = man;
+			sourceTree = "<group>";
+		};
+		FEEDFACE0000000000000009 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FEEDFACE0000000000000061 /* Foundation.framework */,
+				FEEDFACE0000000000000062 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FEEDFACE0000000000000091 /* pl */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEEDFACE00000000000000A2 /* Build configuration list for PBXNativeTarget "pl" */;
+			buildPhases = (
+				FEEDFACE0000000000000071 /* Sources */,
+				FEEDFACE0000000000000081 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pl;
+			productName = pl;
+			productReference = FEEDFACE0000000000000041 /* pl */;
+			productType = "com.apple.product-type.tool";
+		};
+		FEEDFACE0000000000000092 /* plutil */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEEDFACE00000000000000A3 /* Build configuration list for PBXNativeTarget "plutil" */;
+			buildPhases = (
+				FEEDFACE0000000000000072 /* Sources */,
+				FEEDFACE0000000000000082 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = plutil;
+			productName = plutil;
+			productReference = FEEDFACE0000000000000042 /* plutil */;
+			productType = "com.apple.product-type.tool";
+		};
+		FEEDFACE0000000000000093 /* defaults */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FEEDFACE00000000000000A4 /* Build configuration list for PBXNativeTarget "defaults" */;
+			buildPhases = (
+				FEEDFACE0000000000000073 /* Sources */,
+				FEEDFACE0000000000000083 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = defaults;
+			productName = defaults;
+			productReference = FEEDFACE0000000000000043 /* defaults */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FEEDFACE0000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+			};
+			buildConfigurationList = FEEDFACE00000000000000A1 /* Build configuration list for PBXProject "foundation_cmds" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FEEDFACE0000000000000002;
+			productRefGroup = FEEDFACE0000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FEEDFACE0000000000000091 /* pl */,
+				FEEDFACE0000000000000092 /* plutil */,
+				FEEDFACE0000000000000093 /* defaults */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FEEDFACE0000000000000071 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEDFACE0000000000000021 /* pl.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEEDFACE0000000000000072 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEDFACE0000000000000022 /* plutil.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FEEDFACE0000000000000073 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEDFACE0000000000000023 /* defaults.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FEEDFACE00000000000000B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_EXCEPTIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/build/debug";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OBJROOT = "$(SRCROOT)/build/obj/debug";
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)/build";
+			};
+			name = Debug;
+		};
+		FEEDFACE00000000000000B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_ENABLE_OBJC_EXCEPTIONS = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/build/release";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				OBJROOT = "$(SRCROOT)/build/obj/release";
+				SDKROOT = macosx;
+				SYMROOT = "$(SRCROOT)/build";
+			};
+			name = Release;
+		};
+		FEEDFACE00000000000000B3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-deprecated-declarations",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEEDFACE00000000000000B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-deprecated-declarations",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FEEDFACE00000000000000B5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-deprecated-declarations",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEEDFACE00000000000000B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-deprecated-declarations",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FEEDFACE00000000000000B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-deprecated-declarations",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FEEDFACE00000000000000B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				EXECUTABLE_PREFIX = "";
+				OTHER_CFLAGS = (
+					"-Wall",
+					"-Wextra",
+					"-Wno-deprecated-declarations",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FEEDFACE00000000000000A1 /* Build configuration list for PBXProject "foundation_cmds" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEEDFACE00000000000000B1 /* Debug */,
+				FEEDFACE00000000000000B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEEDFACE00000000000000A2 /* Build configuration list for PBXNativeTarget "pl" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEEDFACE00000000000000B3 /* Debug */,
+				FEEDFACE00000000000000B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEEDFACE00000000000000A3 /* Build configuration list for PBXNativeTarget "plutil" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEEDFACE00000000000000B5 /* Debug */,
+				FEEDFACE00000000000000B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FEEDFACE00000000000000A4 /* Build configuration list for PBXNativeTarget "defaults" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEEDFACE00000000000000B7 /* Debug */,
+				FEEDFACE00000000000000B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FEEDFACE0000000000000001 /* Project object */;
+}

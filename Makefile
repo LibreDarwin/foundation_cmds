@@ -16,6 +16,9 @@ CC     := /Users/sunneva/xnuports-root/devel/xcode-tools/build/release/Developer
 
 -include make/$(CONFIG).mk
 
+PREFIX  ?= /usr/local
+DESTDIR ?=
+
 BUILD_DIR := build/$(CONFIG)
 OBJDIR    := $(BUILD_DIR)/obj
 
