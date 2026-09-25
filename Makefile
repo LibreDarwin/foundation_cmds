@@ -34,6 +34,7 @@ PLUTIL_OBJS := $(OBJDIR)/plutil.o
 
 DEFAULTS      := $(BUILD_DIR)/defaults
 DEFAULTS_OBJS := $(OBJDIR)/defaults.o
+DEFAULTS_PRIVATE := src/defaults
 
 all: $(PL) $(PLUTIL) $(DEFAULTS)
 
@@ -55,7 +56,7 @@ $(OBJDIR)/plutil.o: src/plutil/plutil.m
 
 $(DEFAULTS): $(DEFAULTS_OBJS)
 	@mkdir -p $(BUILD_DIR)
-	$(CC) $(MFLAGS) -o $@ $(DEFAULTS_OBJS) $(LFLAGS)
+	$(CC) $(MFLAGS) -o $@ $(DEFAULTS_OBJS) -L$(DEFAULTS_PRIVATE) -lcfprivate $(LFLAGS)
 
 $(OBJDIR)/defaults.o: src/defaults/defaults.m
 	@mkdir -p $(OBJDIR)

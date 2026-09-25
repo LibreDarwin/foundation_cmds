@@ -1,0 +1,2 @@
+write ccmt.arr L -array-add 2 3
+read ccmt.arr L

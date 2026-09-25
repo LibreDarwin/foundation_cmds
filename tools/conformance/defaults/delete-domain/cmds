@@ -1,0 +1,3 @@
+write ccmt.del X 1
+delete ccmt.del
+read ccmt.del

@@ -12,6 +12,7 @@
 		FEEDFACE0000000000000023 /* defaults.m in Sources */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000053 /* defaults.m */; };
 		FEEDFACE0000000000000031 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000061 /* Foundation.framework */; };
 		FEEDFACE0000000000000032 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000062 /* CoreFoundation.framework */; };
+		FEEDFACE0000000000000033 /* libcfprivate.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FEEDFACE0000000000000063 /* libcfprivate.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		FEEDFACE0000000000000053 /* defaults.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = defaults.m; sourceTree = "<group>"; };
 		FEEDFACE0000000000000061 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FEEDFACE0000000000000062 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FEEDFACE0000000000000063 /* libcfprivate.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; path = libcfprivate.tbd; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 			files = (
 				FEEDFACE0000000000000031 /* Foundation.framework in Frameworks */,
 				FEEDFACE0000000000000032 /* CoreFoundation.framework in Frameworks */,
+				FEEDFACE0000000000000033 /* libcfprivate.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				FEEDFACE0000000000000053 /* defaults.m */,
+				FEEDFACE0000000000000063 /* libcfprivate.tbd */,
 			);
 			path = defaults;
 			sourceTree = "<group>";
@@ -345,6 +349,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited) $(SRCROOT)/src/defaults";
 				OTHER_CFLAGS = (
 					"-Wall",
 					"-Wextra",
@@ -358,6 +363,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EXECUTABLE_PREFIX = "";
+				LIBRARY_SEARCH_PATHS = "$(inherited) $(SRCROOT)/src/defaults";
 				OTHER_CFLAGS = (
 					"-Wall",
 					"-Wextra",

@@ -1,0 +1,5 @@
+write ccmt.rn R1 one
+rename ccmt.rn R1 R2
+read ccmt.rn R2
+delete ccmt.rn R2
+delete ccmt.rn R2

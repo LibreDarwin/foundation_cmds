@@ -1,0 +1,3 @@
+write ccmt.writeread Venus 1.5
+read ccmt.writeread Venus
+read ccmt.writeread

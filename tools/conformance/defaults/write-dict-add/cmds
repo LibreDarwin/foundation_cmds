@@ -1,0 +1,2 @@
+write ccmt.dict D -dict-add k a
+read ccmt.dict D
