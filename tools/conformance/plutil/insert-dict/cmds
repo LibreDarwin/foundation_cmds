@@ -1,0 +1,2 @@
+-insert k -dictionary small.json
+-p small.json

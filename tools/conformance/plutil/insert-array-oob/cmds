@@ -1,0 +1,2 @@
+-insert a.3 -integer 9 small.json
+-p small.json

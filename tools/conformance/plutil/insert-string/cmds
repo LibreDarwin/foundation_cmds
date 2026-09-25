@@ -1,0 +1,2 @@
+-insert k -string v fw.json
+-p fw.json

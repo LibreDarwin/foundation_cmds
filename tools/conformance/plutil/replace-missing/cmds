@@ -1,0 +1,2 @@
+-replace nope -string x small.json
+-p small.json

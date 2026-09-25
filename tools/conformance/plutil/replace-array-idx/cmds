@@ -1,0 +1,2 @@
+-replace a.1 -integer 9 small.json
+-p small.json

@@ -1,0 +1,2 @@
+-extract ar json fw.json
+-p fw.json

@@ -1,0 +1,2 @@
+-insert a -integer 9 -append small.json
+-p small.json

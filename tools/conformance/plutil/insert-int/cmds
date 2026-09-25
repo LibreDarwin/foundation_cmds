@@ -1,0 +1,2 @@
+-insert k -integer 9 fw.json
+-p fw.json

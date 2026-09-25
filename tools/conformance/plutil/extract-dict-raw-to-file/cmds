@@ -1,0 +1,2 @@
+-extract n raw -o out.txt fw.json
+-type out.txt

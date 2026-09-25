@@ -1,0 +1,2 @@
+-insert k -array small.json
+-p small.json

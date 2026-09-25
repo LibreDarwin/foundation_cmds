@@ -1,0 +1,2 @@
+-replace s -string hello fw.json
+-p fw.json

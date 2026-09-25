@@ -1,0 +1,2 @@
+-insert k -bool TRUE fw.json
+-p fw.json

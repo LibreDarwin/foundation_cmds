@@ -1,0 +1,2 @@
+-create binary1 -o new.bin
+-type new.bin
