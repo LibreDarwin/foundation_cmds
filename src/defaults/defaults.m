@@ -99,6 +99,38 @@ static void show(NSString *format, ...)
     [s release];
 }
 
+static NSString *prettyDescription(id obj)
+{
+    NSString *d = [obj description];
+    return [d stringByReplacingOccurrencesOfString:@"\\"
+                                        withString:@"\\\\"];
+}
+
+static void showPretty(id obj)
+{
+    show(@"%@\n", prettyDescription(obj));
+}
+
+static NSString *stringifySingleKey(NSString *s)
+{
+    NSMutableString *out = [NSMutableString string];
+    NSUInteger len = [s length];
+    for (NSUInteger i = 0; i < len; i++) {
+        unichar c = [s characterAtIndex:i];
+        if (c == '\\') {
+            [out appendString:@"\\\\"];
+        } else if (c == '\n' || c == '\t' || c == '\r' ||
+                   (c >= 0x20 && c <= 0x7E)) {
+            [out appendFormat:@"%C", c];
+        } else if (c <= 0xFF) {
+            [out appendFormat:@"\\%03o", c];
+        } else {
+            [out appendFormat:@"\\u%04x", c];
+        }
+    }
+    return out;
+}
+
 static CFStringRef getDomain(NSArray *args, NSUInteger *index)
 {
     NSUInteger i = *index;
@@ -271,7 +303,8 @@ int main(void)
                 NSString *display = [domainKey isEqualToString:(NSString *)kCFPreferencesAnyApplication]
                     ? @"Apple Global Domain" : domainKey;
                 show(@"Found %lu keys in domain '%@': %@\n",
-                     (unsigned long)[results count], display, [results description]);
+                     (unsigned long)[results count], display,
+                     prettyDescription(results));
                 foundCount += 1;
             }
             CFRelease(plist);
@@ -321,7 +354,7 @@ int main(void)
         }
         if (map != NULL)
             CFRelease(map);
-        show(@"%@\n", [result description]);
+        showPretty(result);
         exit(0);
     }
 
@@ -343,14 +376,18 @@ int main(void)
                 NSLog(@"\nDomain %@ does not exist\n", display);
                 exit(1);
             }
-            show(@"%@\n", [(NSDictionary *)plist description]);
+            showPretty(plist);
             CFRelease(plist);
             exit(0);
         }
         NSString *key = [args objectAtIndex:index];
         id value = (id)CFPreferencesCopyValue((CFStringRef)key, (CFStringRef)path, user, effectiveHost);
         if (value != nil) {
-            show(@"%@\n", [value description]);
+            if (CFGetTypeID(value) == CFStringGetTypeID()) {
+                show(@"%@\n", stringifySingleKey(value));
+            } else {
+                showPretty(value);
+            }
             CFRelease(value);
             exit(0);
         }

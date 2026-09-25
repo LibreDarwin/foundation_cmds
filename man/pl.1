@@ -1,0 +1,36 @@
+.Dd September 25, 2026
+.Dt PL 1
+.Os Darwin
+.Sh NAME
+.Nm pl
+.Nd convert ASCII property list format
+.Sh SYNOPSIS
+.Nm
+.Op Fl input Ar file
+.Op Fl output Ar file
+.Sh DESCRIPTION
+.Nm
+reads ASCII PL from stdin, or from the file specified with
+.Fl input ,
+and writes ASCII PL to stdout, or to the file specified with
+.Fl output .
+.Pp
+Binary serialization is no longer supported.
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl input Ar file
+Read input from
+.Ar file
+instead of stdin.
+.It Fl output Ar file
+Write output to
+.Ar file
+instead of stdout.
+.El
+.Sh SEE ALSO
+.Xr defaults 1 ,
+.Xr plutil 1
+.Sh HISTORY
+The
+.Nm
+command first appeared in NeXTSTEP.

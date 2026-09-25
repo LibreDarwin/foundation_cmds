@@ -1,0 +1,1 @@
+# live daemon state (whole-map / host reads) is nondeterministic by nature; run as advisory

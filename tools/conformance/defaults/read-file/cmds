@@ -1,0 +1,6 @@
+read <ws>/escaped.plist
+read <ws>/escaped.plist curly
+read <ws>/escaped.plist world
+read <ws>/escaped.plist escapes
+read <ws>/escaped.plist literal_bs
+read <ws>/escaped.plist plain

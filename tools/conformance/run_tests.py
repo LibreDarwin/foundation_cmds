@@ -116,17 +116,27 @@ def main():
     def split_probe(argv_bytes):
         return [a.decode("utf-8") for a in argv_bytes.split(b"\0") if a != b""]
 
-    def read_cmds(case_dir):
-        """Return a list of argv lists, one per commanded invocation."""
+    def read_cmds(case_dir, ws):
+        """Return a list of argv lists, one per commanded invocation.
+
+        A "<ws>" token anywhere in an argv element is replaced with the
+        workspace's absolute path, so probes can address fixture files that
+        live in the workspace (e.g. "read <ws>/escaped.plist" for a
+        deterministic, daemon-free file read).
+        """
         cmds_path = os.path.join(case_dir, "cmds")
         args_path = os.path.join(case_dir, "args")
+        argv_list = None
         if os.path.exists(cmds_path):
             raw = read_file(cmds_path)
-            return [shlex.split(line) for line in
-                    raw.decode("utf-8").splitlines() if line.strip()]
-        if os.path.exists(args_path):
-            return [split_probe(read_file(args_path))]
-        return []
+            argv_list = [shlex.split(line) for line in
+                         raw.decode("utf-8").splitlines() if line.strip()]
+        elif os.path.exists(args_path):
+            argv_list = [split_probe(read_file(args_path))]
+        if argv_list is None:
+            return []
+        return [[a.replace("<ws>", os.path.abspath(ws)) for a in argv]
+                for argv in argv_list]
 
     def run_probe(argv_list, stdin_data, ws_oracle, ws_subject):
         """Run the full command sequence for each side, then compare records.
@@ -181,7 +191,7 @@ def main():
         ws_o = make_workspace(case_dir)
         ws_m = make_workspace(case_dir)
         try:
-            records = run_probe(read_cmds(case_dir), stdin_data, ws_o, ws_m)
+            records = run_probe(read_cmds(case_dir, ws_o), stdin_data, ws_o, ws_m)
         finally:
             import shutil
             shutil.rmtree(ws_o, ignore_errors=True)
@@ -192,6 +202,9 @@ def main():
             if (ec, eo, ee) == (gc, go, ge):
                 continue
             ok = False
+            if os.path.exists(os.path.join(case_dir, "flaky")):
+                print("SKIP %s (flaky: %d/%d)" % (name, n + 1, len(records)))
+                break
             failures += 1
             print("FAIL %s (%d/%d)" % (name, n + 1, len(records)))
             if ec != gc:

@@ -1,0 +1,102 @@
+.Dd September 25, 2026
+.Dt DEFAULTS 1
+.Os Darwin
+.Sh NAME
+.Nm defaults
+.Nd read, modify, and export an application's defaults
+.Sh SYNOPSIS
+.Nm
+.Op Fl currentHost | Fl host Ar hostname
+.Ar command
+.Op Ar arguments ...
+.Sh DESCRIPTION
+.Nm
+is a command line interface to a user's defaults.
+.Pp
+A domain may be given as a domain name, as
+.Fl app Ar application_name ,
+as
+.Fl globalDomain ,
+or as a path to a .plist file with the '.plist' extension omitted.
+.Sh COMMANDS
+.Bl -tag -width Ds
+.It read
+Show all defaults.
+.It read Ar domain
+Show the defaults for the given domain.
+.It read Ar domain Ar key
+Show the defaults for the given domain and key.
+.It read-type Ar domain Ar key
+Show the type for the given domain and key.
+.It write Ar domain Ar domain_rep
+Write the domain, overwriting any existing value.
+.It write Ar domain Ar key Ar value
+Write
+.Ar key
+for domain.
+.It rename Ar domain Ar old_key Ar new_key
+Rename old_key to new_key.
+.It delete Ar domain
+Delete the domain.
+.It delete Ar domain Ar key
+Delete the key in the domain.
+.It delete-all Ar domain
+Delete the domain from all containers.
+.It delete-all Ar domain Ar key
+Delete the key in the domain from all containers.
+.It import Ar domain Ar path
+Write the plist at
+.Ar path
+to the domain.
+.It import Ar domain -
+Write a plist from stdin to the domain.
+.It export Ar domain Ar path
+Save the domain as a binary plist to
+.Ar path .
+.It export Ar domain -
+Write the domain as an xml plist to stdout.
+.It domains
+List all domains.
+.It find Ar word
+List all entries containing
+.Ar word .
+.It help
+Print a help message.
+.El
+.Sh VALUE SYNTAX
+A
+.Ar value
+is one of the following:
+.Bl -tag -width Ds
+.It Ar value_rep
+A simple string, number, or boolean literal, or a quoted string.
+.It Fl string Ar string_value
+.It Fl data Ar hex_digits
+.It Fl int Ns Op Fl eger Ar integer_value
+.It Fl float Ar floating_point_value
+.It Fl bool Ns Op Fl ean Ar value
+Where
+.Ar value
+is one of
+.Ar true ,
+.Ar false ,
+.Ar yes ,
+or
+.Ar no .
+.It Fl date Ar date_rep
+.El
+.Sh OPTIONS
+.Bl -tag -width Ds
+.It Fl currentHost
+Operate on the current host's per-host defaults.
+.It Fl host Ar hostname
+Operate on the per-host defaults of the given
+.Ar hostname .
+.El
+.Sh SEE ALSO
+.Xr pl 1 ,
+.Xr plutil 1
+.Sh HISTORY
+The
+.Nm
+command first appeared in NeXTSTEP.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>curly</key>
+	<string>“abc”</string>
+	<key>world</key>
+	<string>世界</string>
+	<key>emoji</key>
+	<string>😄 ″</string>
+	<key>escapes</key>
+	<string>line1
+	"e\f</string>
+	<key>literal_bs</key>
+	<string>a\b</string>
+	<key>plain</key>
+	<string>Hello	World!</string>
+</dict>
+</plist>

@@ -1,0 +1,222 @@
+.Dd September 25, 2026
+.Dt PLUTIL 1
+.Os Darwin
+.Sh NAME
+.Nm plutil
+.Nd manipulate property list files
+.Sh SYNOPSIS
+.Nm plutil
+.Op Ar command_option
+.Op Ar other_options
+.Ar file ...
+.Sh DESCRIPTION
+.Nm
+can be used to check the syntax of property list files, or convert them to
+other formats.
+.Pp
+The file
+.Sq -
+means standard input.
+The default command is
+.Fl lint .
+.Sh COMMAND OPTIONS
+.Bl -tag -width Ds
+.It Fl help
+Show this message and exit.
+.It Fl lint
+Check the property list files for syntax errors.
+.It Fl convert Ar fmt
+Rewrite the property list files in format
+.Ar fmt .
+Valid formats are
+.Ar xml1 ,
+.Ar binary1 ,
+.Ar json ,
+.Ar swift ,
+and
+.Ar objc .
+For
+.Ar objc ,
+a header may additionally be created by specifying the
+.Fl header
+option.
+.It Fl insert Ar keypath Fl type Ar value
+Insert a value into the property list before writing it out.
+.Ar keypath
+is a key-value coding key path, with one extension: a numerical path
+component applied to an array will act on the object at that index in the
+array, or insert it into the array if the numerical path component is the
+last one in the key path.
+.Pp
+.Ar type
+is one of
+.Ar bool ,
+.Ar integer ,
+.Ar float ,
+.Ar date ,
+.Ar string ,
+.Ar data ,
+.Ar xml ,
+.Ar json ,
+.Ar dictionary ,
+or
+.Ar array .
+.Bl -tag -width 12n -compact
+.It Fl bool
+YES if passed
+.Dq YES
+or
+.Dq true ,
+otherwise NO.
+.It Fl integer
+Any valid 64 bit integer.
+.It Fl float
+Any valid 64 bit float.
+.It Fl string
+UTF8 encoded string.
+.It Fl date
+A date in XML property list format; not supported if outputting JSON.
+.It Fl data
+A base-64 encoded string.
+.It Fl xml
+An XML property list, useful for inserting compound values.
+.It Fl json
+A JSON fragment, useful for inserting compound values.
+.It Fl dictionary
+Inserts an empty dictionary; does not use a value.
+.It Fl array
+Inserts an empty array; does not use a value.
+.El
+.Pp
+If
+.Fl append
+is specified and the keypath references an array, the value is appended to
+the end of that array.
+.It Fl replace Ar keypath Fl type Ar value
+Same as
+.Fl insert ,
+but it will overwrite an existing value.
+.It Fl remove Ar keypath
+Remove the value at
+.Ar keypath
+from the property list before writing it out.
+.It Fl extract Ar keypath Ar fmt
+Output the value at
+.Ar keypath
+in the property list as a new plist of type
+.Ar fmt .
+Valid formats are
+.Ar xml1 ,
+.Ar binary1 ,
+.Ar json ,
+and
+.Ar raw .
+An additional
+.Fl expect Ar type
+option may be provided to test that the value at the specified keypath is
+of the specified type
+.Pq one of
+.Ar bool ,
+.Ar integer ,
+.Ar float ,
+.Ar string ,
+.Ar date ,
+.Ar data ,
+.Ar dictionary ,
+.Ar array .
+.Pp
+When
+.Ar fmt
+is
+.Ar raw ,
+the following is printed to stdout for each value type:
+.Bl -tag -width 12n -compact
+.It bool
+The string
+.Dq true
+or
+.Dq false .
+.It integer
+The numeric value.
+.It float
+The numeric value.
+.It string
+The string, UTF8 encoded.
+.It date
+The date, RFC3339 encoded in the UTC timezone.
+.It data
+The data, base64 encoded.
+.It dictionary
+Each key on a new line.
+.It array
+The count of items in the array.
+.El
+.Pp
+By default, the output is written to stdout unless
+.Fl o
+is specified.
+.It Fl type Ar keypath
+Output the type of the value at
+.Ar keypath
+in the property list.
+The type is one of
+.Ar bool ,
+.Ar integer ,
+.Ar float ,
+.Ar string ,
+.Ar date ,
+.Ar data ,
+.Ar dictionary ,
+or
+.Ar array .
+.It Fl create Ar fmt
+Create an empty plist of the specified format.
+The file may be
+.Sq -
+for stdout.
+.It Fl p
+Print the property list in a human-readable fashion.
+This format is not stable and is not intended for machine parsing.
+.El
+.Sh OTHER OPTIONS
+The following options apply to
+.Fl convert ,
+.Fl insert ,
+.Fl remove ,
+.Fl replace ,
+and
+.Fl extract :
+.Bl -tag -width Ds
+.It Fl s
+Be silent on success.
+.It Fl o Ar path
+Specify an alternate file path name for the result.
+The
+.Fl o
+option is used with
+.Fl convert ,
+and is only useful with a single file argument
+.Pq the last file overwrites .
+The path
+.Sq -
+means stdout.
+.It Fl e Ar extension
+Specify an alternate extension for converted files.
+.It Fl r
+If writing JSON, output in human-readable form.
+.It Fl n
+Prevent printing a terminating newline when it is not part of the format,
+such as with raw.
+.It Fl -
+Specify that all further arguments are file names.
+.El
+.Sh SEE ALSO
+.Xr defaults 1 ,
+.Xr pl 1
+.Sh HISTORY
+The
+.Nm
+command first appeared in Mac OS X 10.2.
+.Sh BUGS
+The printed path in certain fatal error messages may include anything the
+user passes on the command line.
