@@ -400,7 +400,8 @@ static void doReadType(CFStringRef host, CFStringRef domain, CFStringRef user,
         show(@"data\n");
     } else if (tid == CFNumberGetTypeID()) {
         CFNumberType ntype = CFNumberGetType((CFNumberRef)value);
-        if (ntype == kCFNumberFloatType || ntype == kCFNumberDoubleType)
+        if (ntype == kCFNumberFloat32Type || ntype == kCFNumberFloat64Type
+            || ntype == kCFNumberMaxType)
             show(@"float\n");
         else
             show(@"integer\n");

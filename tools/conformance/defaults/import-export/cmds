@@ -1,0 +1,14 @@
+import ccmt.imp seed.plist
+read ccmt.imp
+export ccmt.imp exp.plist
+/usr/bin/plutil -p exp.plist
+read-type ccmt.imp str
+read-type ccmt.imp num
+read-type ccmt.imp fp
+read-type ccmt.imp flag
+read-type ccmt.imp off
+read-type ccmt.imp arr
+read-type ccmt.imp dict
+read-type ccmt.imp bin
+read-type ccmt.imp d
+read-type ccmt.imp space key
